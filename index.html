@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#020611">
+<title>SWEEPER — CYBER BATTLE SYSTEM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="title" class="screen title">
+  <div class="grid-bg"></div><div class="scan"></div><div class="hud-corner c1"></div><div class="hud-corner c2"></div>
+  <div class="title-card panel">
+    <div class="brand-kicker">SWEEPER / CYBER BATTLE SYSTEM</div>
+    <div class="logo">SWEEPER</div><div class="sub">CYBER BATTLE SYSTEM</div>
+    <div class="copy">MOVE. READ THE RANGE. STRIKE.</div>
+    <button id="new" class="cyber primary" type="button">▶ NEW GAME</button>
+    <div class="links"><button type="button" disabled>CONTINUE</button><button type="button" disabled>OPTION</button></div>
+    <small class="copyright">© SWEEPER PROJECT / ALPHA PROTOTYPE</small>
+  </div>
+</section>
+
+<section id="select" class="screen" hidden>
+  <header class="top"><div><div class="eyebrow">SWEEPER / CHARACTER SELECT</div><h1>CHOOSE YOUR<br>SWEEPER</h1></div><span class="eyebrow">ALPHA<br>0.1</span></header>
+  <div id="chars" class="select-grid"></div>
+</section>
+
+<section id="battle" class="screen battle" hidden>
+<header class="hud">
+  <div class="hudbox"><div class="portrait"><img id="battle-character-portrait" alt="player portrait"></div><div class="hudcopy"><div class="hudname"><span id="pn"></span><span id="pt"></span></div><div class="hptext"><span>HP</span><b id="pht"></b></div><div class="bar"><i id="phb"></i></div><div id="pst" class="status"></div></div></div>
+  <div class="turn panel"><span class="eyebrow">BATTLE</span><strong id="turn">TURN 01</strong><span id="time">00:00</span></div>
+  <div class="hudbox enemy"><div class="hudcopy"><div class="hudname"><span>CPU</span><span>TRAINING UNIT</span></div><div class="hptext"><span>HP</span><b id="eht"></b></div><div class="bar"><i id="ehb"></i></div><div id="est" class="status"></div></div><div class="portrait cpu-portrait"><img src="cpu.svg" alt="CPU"></div></div>
+</header>
+
+<div class="main">
+<section class="field panel">
+  <div class="fieldhead"><div><div class="eyebrow">BATTLE FIELD</div><b>5 × 5 GRID</b></div><span class="eyebrow">ATTACK LINE <b>↕ ↔ 3</b></span></div>
+  <div id="grid" class="grid"></div>
+  <div class="footer"><span><i class="legend blue"></i>PLAYER</span><span><i class="legend red"></i>CPU</span><span><i class="legend cyan"></i>MOVE</span><span><i class="legend yellow"></i>RANGE</span></div>
+</section>
+<aside class="side">
+  <section class="read panel"><div class="eyebrow">COMBAT READOUT</div><div id="msg" class="message"></div><div class="row"><span>DISTANCE</span><b id="dist">—</b></div><div class="row"><span>NEXT ACTION</span><b id="next">MOVE</b></div></section>
+  <section class="logpanel panel"><div class="eyebrow">BATTLE LOG</div><div id="log" class="log"></div></section>
+</aside>
+</div>
+
+<section class="visual panel"><div class="visual-head"><div><div class="eyebrow">CHARACTER MOTION</div><b id="motion-title">REN / ATTACK MOTION</b></div><span class="eyebrow">SOURCE-DERIVED MOTION</span></div><div class="motion-frame"><img id="battle-motion" alt="character attack motion"></div></section>
+
+<section class="chips panel"><div class="chiphead"><div><div class="eyebrow">CHIP SELECT</div><b id="chipmode">Choose an action</b></div><button id="clear" class="cyber" type="button">CLEAR</button></div><div id="chiplist" class="chiplist"></div></section>
+</section>
+
+<section id="result" class="screen result" hidden><div class="resultcard panel"><div class="eyebrow">BATTLE RESULT</div><div id="resultlabel" class="resultlabel victory">VICTORY</div><div id="summary" class="summary"></div><div class="rstats"><div><span>CHARACTER</span><b id="rc"></b></div><div><span>TIME</span><b id="rt"></b></div><div><span>HP LEFT</span><b id="rh"></b></div></div><div class="actions"><button id="rematch" class="cyber primary" type="button">↻ REMATCH</button><button id="titlebtn" class="cyber" type="button">⌂ TITLE</button></div></div></section>
+<script src="game.js" defer></script>
+</body></html>
